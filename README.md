@@ -18,7 +18,6 @@ MCP server for the Datadog API, enabling incident management and more.
 ## Tools
 
 1. `list_incidents`
-
    - Retrieve a list of incidents from Datadog.
    - **Inputs**:
      - `filter` (optional string): Filter parameters for incidents (e.g., status, priority).
@@ -26,14 +25,12 @@ MCP server for the Datadog API, enabling incident management and more.
    - **Returns**: Array of Datadog incidents and associated metadata.
 
 2. `get_incident`
-
    - Retrieve detailed information about a specific Datadog incident.
    - **Inputs**:
      - `incident_id` (string): Incident ID to fetch details for.
    - **Returns**: Detailed incident information (title, status, timestamps, etc.).
 
 3. `get_monitors`
-
    - Fetch the status of Datadog monitors.
    - **Inputs**:
      - `groupStates` (optional array): States to filter (e.g., alert, warn, no data, ok).
@@ -42,7 +39,6 @@ MCP server for the Datadog API, enabling incident management and more.
    - **Returns**: Monitors data and a summary of their statuses.
 
 4. `get_logs`
-
    - Search and retrieve logs from Datadog.
    - **Inputs**:
      - `query` (string): Datadog logs query string.
@@ -52,7 +48,6 @@ MCP server for the Datadog API, enabling incident management and more.
    - **Returns**: Array of matching logs.
 
 5. `list_dashboards`
-
    - Get a list of dashboards from Datadog.
    - **Inputs**:
      - `name` (optional string): Filter dashboards by name.
@@ -60,14 +55,12 @@ MCP server for the Datadog API, enabling incident management and more.
    - **Returns**: Array of dashboards with URL references.
 
 6. `get_dashboard`
-
    - Retrieve a specific dashboard from Datadog.
    - **Inputs**:
      - `dashboard_id` (string): ID of the dashboard to fetch.
    - **Returns**: Dashboard details including title, widgets, etc.
 
 7. `query_metrics`
-
    - Retrieve metrics data from Datadog.
    - **Inputs**:
      - `query` (string): Metrics query string.
@@ -76,7 +69,6 @@ MCP server for the Datadog API, enabling incident management and more.
    - **Returns**: Metrics data for the queried timeframe.
 
 8. `list_traces`
-
    - Retrieve a list of APM traces from Datadog.
    - **Inputs**:
      - `query` (string): Datadog APM trace query string.
@@ -89,7 +81,6 @@ MCP server for the Datadog API, enabling incident management and more.
    - **Returns**: Array of matching traces from Datadog APM.
 
 9. `list_hosts`
-
    - Get list of hosts from Datadog.
    - **Inputs**:
      - `filter` (optional string): Filter string for search results.
@@ -103,14 +94,12 @@ MCP server for the Datadog API, enabling incident management and more.
    - **Returns**: Array of hosts with details including name, ID, aliases, apps, mute status, and more.
 
 10. `get_active_hosts_count`
-
     - Get the total number of active hosts in Datadog.
     - **Inputs**:
       - `from` (optional number): Number of seconds from which you want to get total number of active hosts (defaults to 2h).
     - **Returns**: Count of total active and up hosts.
 
 11. `mute_host`
-
     - Mute a host in Datadog.
     - **Inputs**:
       - `hostname` (string): The name of the host to mute.
@@ -120,14 +109,12 @@ MCP server for the Datadog API, enabling incident management and more.
     - **Returns**: Success status and confirmation message.
 
 12. `unmute_host`
-
     - Unmute a host in Datadog.
     - **Inputs**:
       - `hostname` (string): The name of the host to unmute.
     - **Returns**: Success status and confirmation message.
 
 13. `list_downtimes`
-
     - List scheduled downtimes from Datadog.
     - **Inputs**:
       - `currentOnly` (optional boolean): Return only currently active downtimes when true.
@@ -135,7 +122,6 @@ MCP server for the Datadog API, enabling incident management and more.
     - **Returns**: Array of scheduled downtimes with details including scope, monitor information, and schedule.
 
 14. `schedule_downtime`
-
     - Schedule a downtime in Datadog.
     - **Inputs**:
       - `scope` (string): Scope to apply downtime to (e.g. 'host:my-host').
@@ -153,20 +139,17 @@ MCP server for the Datadog API, enabling incident management and more.
     - **Returns**: Scheduled downtime details including ID and active status.
 
 15. `cancel_downtime`
-
     - Cancel a scheduled downtime in Datadog.
     - **Inputs**:
       - `downtimeId` (number): The ID of the downtime to cancel.
     - **Returns**: Confirmation of downtime cancellation.
 
 16. `get_rum_applications`
-
     - Get all RUM applications in the organization.
     - **Inputs**: None.
     - **Returns**: List of RUM applications.
 
 17. `get_rum_events`
-
     - Search and retrieve RUM events from Datadog.
     - **Inputs**:
       - `query` (string): Datadog RUM query string.
@@ -176,7 +159,6 @@ MCP server for the Datadog API, enabling incident management and more.
     - **Returns**: Array of RUM events.
 
 18. `get_rum_grouped_event_count`
-
     - Search, group and count RUM events by a specified dimension.
     - **Inputs**:
       - `query` (optional string): Additional query filter for RUM search (default: "\*").
@@ -186,7 +168,6 @@ MCP server for the Datadog API, enabling incident management and more.
     - **Returns**: Grouped event counts.
 
 19. `get_rum_page_performance`
-
     - Get page (view) performance metrics from RUM data.
     - **Inputs**:
       - `query` (optional string): Additional query filter for RUM search (default: "\*").
@@ -196,7 +177,6 @@ MCP server for the Datadog API, enabling incident management and more.
     - **Returns**: Performance metrics including average, min, max, and count for each metric.
 
 20. `get_rum_page_waterfall`
-
     - Retrieve RUM page (view) waterfall data filtered by application name and session ID.
     - **Inputs**:
       - `applicationName` (string): Application name to filter events.
@@ -234,9 +214,9 @@ npx -y @smithery/cli install @winor30/mcp-server-datadog --client claude
 ### Manual Installation
 
 ```bash
-pnpm install
-pnpm build
-pnpm watch   # for development with auto-rebuild
+npm install
+npm run build
+npm run watch   # for development with auto-rebuild
 ```
 
 ## Usage with Claude Desktop
